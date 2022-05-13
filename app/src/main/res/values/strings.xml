@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Way to dream</string>
+    <string name="dream"></string>
+    <string name="title_activity_main2">MainActivity2</string>
+    <string name="title_plant">Растение</string>
+    <string name="title_list">Список</string>
+    <string name="title_activity_list">ActivityList</string>
+</resources>

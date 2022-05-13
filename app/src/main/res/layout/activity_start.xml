@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/headerStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="67.84dp"
+        android:text="Какая у вас мечта?"
+        android:textColor="@color/text"
+        android:textSize="22dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/dream"
+        style="@style/FieldEnterEnter"
+        android:layout_width="265dp"
+        android:layout_marginTop="142dp"
+        android:hint="Название мечты"
+        android:maxLength="20"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headerStart" />
+
+    <EditText
+        android:id="@+id/motivation"
+        style="@style/FieldEnterEnter"
+        android:layout_width="265dp"
+        android:layout_marginTop="10dp"
+        android:ellipsize="end"
+        android:ems="10"
+        android:hint="Что вас мотивирует?"
+        android:maxLength="100"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dream" />
+
+    <Button
+        android:id="@+id/button1"
+        style="@style/ButtonDefault"
+        android:layout_marginTop="98dp"
+        android:onClick="toNextStart"
+        android:text="Продолжить"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/motivation" />
+</androidx.constraintlayout.widget.ConstraintLayout>

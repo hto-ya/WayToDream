@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="text">#525252</color>
+    <color name="podtext">#666666</color>
+    <color name="light_text">#9A9A9A</color>
+    <color name="medium_light">#A690D7</color>
+    <color name="medium_main">#8872B5</color>
+    <color name ="black_main">#6B4FA6</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FAFAFA</color>
+    <color name="light_white">#D3C9E7</color>
+</resources>

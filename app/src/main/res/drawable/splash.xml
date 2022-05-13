@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:bottom="4dp"
+        android:right="4dp">
+        <shape>
+            <gradient
+                android:type= "linear"
+                android:angle="270"
+                android:startColor="#B8A7DB"
+                android:endColor="#413387" />
+        </shape>
+    </item>
+    <item>
+        <bitmap
+            android:gravity="center"
+            android:src="@drawable/list"/>
+    </item>
+
+</layer-list>

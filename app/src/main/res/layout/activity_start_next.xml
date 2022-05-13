@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/headerStart"
+                    android:layout_marginTop="67.84dp"
+                    android:gravity="center"
+                    android:text="Что необходимо сделать для осуществления мечты? "
+                    android:textColor="@color/text"
+                    android:textSize="22sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_start_next"
+                    android:layout_width="273dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="100dp"
+                    android:scrollbarThumbVertical="@color/medium_main"
+                    android:scrollbars="vertical"
+                    tools:itemCount="1"
+                    tools:listitem="@layout/list_item_start" />
+
+                <Button
+                    android:id="@+id/addStage"
+                    style="@style/ButtonDefault"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="80dp"
+                    android:text="добавить этап"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <Button
+                    android:id="@+id/start_next"
+                    style="@style/ButtonDefault"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="184.44dp"
+                    android:text="Продолжить"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+        </LinearLayout>
+</androidx.core.widget.NestedScrollView>
+
