@@ -82,20 +82,16 @@ public class StageStartsAdapter extends RecyclerView.Adapter<StageStartsAdapter.
             }
         });
 
-        holder.mTextView.setOnKeyListener(new View.OnKeyListener()
-                                          {
-                                              public boolean onKey(View v, int keyCode, KeyEvent event)
-                                              {
-                                                  if(event.getAction() == KeyEvent.ACTION_DOWN && (
-                                                          (keyCode == KeyEvent.KEYCODE_ENTER) || (keyCode == KeyEvent.KEYCODE_BACK)) && (!holder.mTextView.getText().toString().equals("")))
-                                                  {
-                                                      // сохраняем текст, введённый до нажатия Enter в переменную
-                                                      sDataset.get(position).setStageName(holder.mTextView.getText().toString());
-                                                      return true;
-                                                  }
-                                                  return false;
-                                              }
-                                          }
+        holder.mTextView.setOnKeyListener((v1, keyCode, event) -> {
+            if(event.getAction() == KeyEvent.ACTION_DOWN && (
+                    (keyCode == KeyEvent.KEYCODE_ENTER) || (keyCode == KeyEvent.KEYCODE_BACK)) && (!holder.mTextView.getText().toString().equals("")))
+            {
+                // сохраняем текст, введённый до нажатия Enter в переменную
+                sDataset.get(position).setStageName(holder.mTextView.getText().toString());
+                return true;
+            }
+            return false;
+        }
         );
     }
 

@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelStore;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -23,6 +24,7 @@ import com.example.waytodream.StageStartsAdapter;
 import com.example.waytodream.databinding.FragmentListBinding;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class ListFragment extends Fragment {
 
@@ -32,6 +34,7 @@ public class ListFragment extends Fragment {
     private ArrayList<Stage> stages;
     private ListViewModel listViewModel;
     private FragmentListBinding binding;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -61,7 +64,7 @@ public class ListFragment extends Fragment {
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         stages = mYourActivity.getData();
-        mAdapter = new GoalsListAdapter(stages.get(0).getGoals());
+        mAdapter = new GoalsListAdapter(stages.get(0).getGoals(), this);
         mRecyclerView.setAdapter(mAdapter);
 
         return root;

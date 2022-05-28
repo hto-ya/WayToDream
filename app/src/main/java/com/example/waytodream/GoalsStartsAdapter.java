@@ -51,20 +51,16 @@ public class GoalsStartsAdapter extends RecyclerView.Adapter<GoalsStartsAdapter.
     public void onBindViewHolder(MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.mTextView.setText(mDataset.get(position).getGoalName());
 
-        holder.mTextView.setOnKeyListener(new View.OnKeyListener()
-                                  {
-                                      public boolean onKey(View v, int keyCode, KeyEvent event)
-                                      {
-                                          if(event.getAction() == KeyEvent.ACTION_DOWN &&
-                                                  ((keyCode == KeyEvent.KEYCODE_ENTER) || (keyCode == KeyEvent.KEYCODE_BACK)) && (!holder.mTextView.getText().toString().equals("")))
-                                          {
-                                              // сохраняем текст, введённый до нажатия Enter в переменную
-                                              mDataset.get(position).setGoalName(holder.mTextView.getText().toString());
-                                              return true;
-                                          }
-                                          return false;
-                                      }
-                                  }
+        holder.mTextView.setOnKeyListener((v, keyCode, event) -> {
+            if(event.getAction() == KeyEvent.ACTION_DOWN &&
+                    ((keyCode == KeyEvent.KEYCODE_ENTER) || (keyCode == KeyEvent.KEYCODE_BACK)) && (!holder.mTextView.getText().toString().equals("")))
+            {
+                // сохраняем текст, введённый до нажатия Enter в переменную
+                mDataset.get(position).setGoalName(holder.mTextView.getText().toString());
+                return true;
+            }
+            return false;
+        }
         );
 
     }

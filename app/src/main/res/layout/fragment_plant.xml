@@ -7,6 +7,19 @@
     android:layout_height="match_parent"
     tools:context=".ui.plant_fragment.PlantFragment">
 
+    <TextView
+        android:id="@+id/example_of_usage"
+        android:layout_width="205dp"
+        android:layout_height="66dp"
+        android:background="#FFFFFF"
+        android:text="Hello"
+        android:textAllCaps="true"
+        android:textColor="#DD2C00"
+        app:layout_constraintBottom_toTopOf="@+id/imagePlant"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/imagePlant"
         android:layout_width="264dp"
@@ -19,4 +32,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.57" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

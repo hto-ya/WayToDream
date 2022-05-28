@@ -13,17 +13,22 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelProviders;
 
 import com.example.waytodream.ActivityList;
 import com.example.waytodream.R;
 import com.example.waytodream.databinding.FragmentPlantBinding;
+import com.example.waytodream.view_models.SharedViewModel;
+
 
 public class PlantFragment extends Fragment {
 
     private PlantViewModel plantViewModel;
     private FragmentPlantBinding binding;
+
     private int[] plantArray = {
             R.drawable.ic_plant0,
             R.drawable.ic_plant25,
@@ -38,6 +43,7 @@ public class PlantFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         plantViewModel =
                 new ViewModelProvider(this).get(PlantViewModel.class);
+
 
         binding = FragmentPlantBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
@@ -61,8 +67,11 @@ public class PlantFragment extends Fragment {
         @SuppressLint("UseCompatLoadingForDrawables") Drawable d = getResources().getDrawable(plantArray[0]);
 
         ImageView plant = root.findViewById(R.id.imagePlant);
+        TextView textView = root.findViewById(R.id.example_of_usage);
 
-
+        SharedViewModel sharedViewModel = SharedViewModel.getInstance();
+        LiveData<String> myData = sharedViewModel.getMyData();
+        myData.observe(getViewLifecycleOwner(), textView::setText);
 
         plant.setImageResource(plantArray[3]);
 
