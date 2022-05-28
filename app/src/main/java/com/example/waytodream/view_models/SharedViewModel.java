@@ -24,7 +24,7 @@ public class SharedViewModel extends ViewModel {
     }
 
     public void setMyData(String value) {
-        this.myData.setValue("Changed");
+        this.myData.setValue(value);
     }
 
 

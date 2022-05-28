@@ -42,6 +42,7 @@ public class GoalsListAdapter extends RecyclerView.Adapter<GoalsListAdapter.MyVi
             itemView.setOnClickListener(view -> {
                 sharedViewModel.setMyData(String.valueOf(getItemId()));
             });
+
         }
     }
 

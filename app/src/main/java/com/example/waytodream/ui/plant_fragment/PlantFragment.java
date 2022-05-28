@@ -68,14 +68,10 @@ public class PlantFragment extends Fragment {
 
         ImageView plant = root.findViewById(R.id.imagePlant);
         TextView textView = root.findViewById(R.id.example_of_usage);
+
         SharedViewModel sharedViewModel = SharedViewModel.getInstance();
         LiveData<String> myData = sharedViewModel.getMyData();
-        myData.observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(String s) {
-                textView.setText(s);
-            }
-        });
+        myData.observe(getViewLifecycleOwner(), textView::setText);
 
         plant.setImageResource(plantArray[3]);
 
